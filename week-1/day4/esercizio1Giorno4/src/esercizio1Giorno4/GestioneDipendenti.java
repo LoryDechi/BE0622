@@ -19,9 +19,12 @@ public class GestioneDipendenti {
 			d.stampaDatiDipendente();
 		}
 		
+		double totaleSalari = 0;
 		for (Dipendente d : dipendenti) {
-			System.out.println("Stipendio con straordinari della matricola " + d.getMatricola() + " : " + Dipendente.calcolaPaga(d, 5));
+			totaleSalari += Dipendente.calcolaPaga(d, 5);
 		}
+		
+		System.out.println("Totale salari dipendenti comprensivo straordinari: " + totaleSalari);
 		
 		
 		
