@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		ElementoMultimediale[] elementi = new ElementoMultimediale[1];
+		ElementoMultimediale[] elementi = new ElementoMultimediale[5];
 		int stop = elementi.length;
 		int indice = 0;
 
