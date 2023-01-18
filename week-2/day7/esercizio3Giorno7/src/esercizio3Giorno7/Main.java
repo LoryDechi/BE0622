@@ -9,6 +9,9 @@ import org.apache.commons.io.FileUtils;
 
 public class Main {
 
+	private static Scanner input = new Scanner(System.in);
+	
+	
 	public static void main(String[] args) {
 		
 		String fileName = "info.txt";
@@ -20,7 +23,7 @@ public class Main {
 		
 		
 		do {
-			Scanner input = new Scanner(System.in);
+			
 			System.out.println("-------------------------------------");
 			System.out.println("Cosa vuoi fare?");
 			System.out.println("0)Esci");
@@ -48,20 +51,21 @@ public class Main {
 			
 		} while (stop != 0);
 		
+		input.close();
 	}
 	
 	public static void aggiugni(File f, String e) {
-		Scanner newDip = new Scanner(System.in);
+		
 		
 		
 		
 		System.out.println("----------------------------------------");
 		
 		System.out.println("Inserisci nome e cognome del dipendente:");
-		String nome = newDip.nextLine();
+		String nome = input.nextLine();
 		System.out.println("Inserisci quanti giorni ha lavorato il dipendente:");
 		try {
-			int giorni = Integer.parseInt(newDip.nextLine());
+			int giorni = Integer.parseInt(input.nextLine());
 			
 			RegistroPresenze d1 = new RegistroPresenze(nome ,giorni);
 			
@@ -95,4 +99,5 @@ public class Main {
 		
 	}
 
+	
 }
