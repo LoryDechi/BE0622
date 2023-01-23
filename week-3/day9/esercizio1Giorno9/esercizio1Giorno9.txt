@@ -1,0 +1,29 @@
+1)SELECT nome,cognome FROM clienti WHERE EXTRACT(year from data_nascita) = '1982'
+
+2)SELECT COUNT(*) FROM fatture WHERE iva = 20
+
+3)SELECT EXTRACT(year from data_fattura) as year, COUNT(*) as numero, SUM(importo) as totale FROM fatture GROUP BY year
+
+4)SELECT * FROM prodotti WHERE EXTRACT(year from data_attivazione) = 2017 and (in_produzione = true or in_commercio = true)
+
+5)SELECT EXTRACT(year from data_fattura) as year , COUNT(*) as numero_fatture FROM fatture WHERE iva = 20  GROUP BY year
+
+6)SELECT EXTRACT(YEAR FROM data_fattura) as year, COUNT(*) as numero_fatture FROM fatture WHERE tipologia = 'A' GROUP BY year HAVING COUNT(*) > 2
+
+7)SELECT numero_fattura,importo,iva,data_fattura,denominazione FROM fatture f inner join fornitori d on d.numero_fornitore = f.numero_fornitore
+
+8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO clienti (nome,cognome,regione_residenza,data_nascita) VALUES ('Lorenzo','De Carolis','Lazio','1998-06-06');
