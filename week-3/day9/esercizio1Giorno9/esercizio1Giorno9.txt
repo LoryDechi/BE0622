@@ -12,7 +12,9 @@
 
 7)SELECT numero_fattura,importo,iva,data_fattura,denominazione FROM fatture f inner join fornitori d on d.numero_fornitore = f.numero_fornitore
 
-8)
+8)SELECT c.regione_residenza as regione,SUM(importo) as totale from fatture f INNER JOIN clienti c ON f.id_cliente = c.numero_cliente GROUP BY regione
+
+9)
 
 
 
