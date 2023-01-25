@@ -1,7 +1,10 @@
 package entities;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +12,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -41,6 +48,14 @@ public class Evento {
 	
 	@Column(name = "numero_massimo_partecipanti")
 	private int numeroMassimoPartecipanti;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+		name = "evento_partecipazione",
+		joinColumns = @JoinColumn( name = "evento_id" ),
+		inverseJoinColumns = @JoinColumn( name = "partecipazione_id" )
+	)
+	private Set<Partecipazione> partecipazioni;
 
 	
 	//GETTERS - SETTERS

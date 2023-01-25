@@ -1,12 +1,16 @@
 package dao;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
+import com.sun.jdi.Location;
+
 import entities.Evento;
+import entities.Partecipazione;
 import entities.TipoEvento;
 import utils.JpaUtil;
 
@@ -16,10 +20,10 @@ public class EventoDAO {
 	private static final EntityManager em = emf.createEntityManager();
 	private static final EntityTransaction t = em.getTransaction();
 	
-	public static void save(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipo, int NumeroMaxPart ) {
-		
+	public static void save(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipo, int NumeroMaxPart) {
 		
 		Evento e = new Evento();
+		
 		
 		try {
 		e.setTitolo(titolo);
@@ -49,6 +53,16 @@ public class EventoDAO {
 		
 		System.out.println("Dati evento:");
 		System.out.println(e);
+	}
+	
+	public static void addPart(int id, int partId) {
+		Evento e = em.find(Evento.class, id);
+		
+		Partecipazione p1 = em.find(Partecipazione.class, partId);
+		
+		e.setPartecipazioni( new HashSet<>() {{
+			add(p1);
+		}});
 	}
 	
 	public static void deleteById(int id) {
