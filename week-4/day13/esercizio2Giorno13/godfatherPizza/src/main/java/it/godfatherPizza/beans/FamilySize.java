@@ -1,5 +1,8 @@
 package it.godfatherPizza.beans;
 
+import lombok.Getter;
+
+@Getter
 public class FamilySize extends Topping {
 	
 	private String condimento;
@@ -9,14 +12,22 @@ public class FamilySize extends Topping {
 	public FamilySize() {
 		this.calorie = "x 2";
 		this.prezzo = 4.15;
-		this.condimento = "FamilySize";
+		this.condimento = "Family";
 	}
 	
 	public FamilySize(Pizza pizza) {
 		this.pizza = pizza;
-		setNome();
+		this.calorie = "x 2";
+		this.prezzo = 4.15;
+		this.condimento = "Family";
+		setCondimento();
 		setCalorie();
 		setPrezzo();
+	}
+	
+	@Override
+	public void setCondimento() {
+		pizza.topping.add(condimento);
 	}
 	
 	@Override

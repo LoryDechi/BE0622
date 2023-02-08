@@ -1,6 +1,8 @@
 package it.godfatherPizza.beans;
 
+import lombok.Getter;
 
+@Getter
 public class Prosciutto extends Topping {
 	
 	private String condimento;
@@ -15,9 +17,17 @@ public class Prosciutto extends Topping {
 	
 	public Prosciutto(Pizza pizza) {
 		this.pizza = pizza;
-		setNome();
+		this.calorie = 35;
+		this.prezzo = 0.99;
+		this.condimento = "Prosciutto";
+		setCondimento();
 		setCalorie();
 		setPrezzo();
+	}
+	
+	@Override
+	public void setCondimento() {
+		pizza.topping.add(condimento);
 	}
 	
 	@Override

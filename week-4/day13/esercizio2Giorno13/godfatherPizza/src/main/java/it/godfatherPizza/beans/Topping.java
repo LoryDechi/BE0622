@@ -17,13 +17,14 @@ public class Topping extends Pizza {
 	}
 
 	public void setPrezzo() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public String menu() {
-		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void setCondimento() {
+		
 	}
 	
 }

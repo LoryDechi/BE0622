@@ -12,5 +12,6 @@ import lombok.Setter;
 public abstract class Prodotto {
 
 	protected double prezzo;
+	private String nota;
 	
 }

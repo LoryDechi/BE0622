@@ -13,8 +13,8 @@ public class Bibita extends Prodotto {
 
 	private String nome;
 	protected int calorie;
-	public Bibita(String nome, double prezzo, int calorie) {
-		super(prezzo);
+	public Bibita(String nome, double prezzo, int calorie, String nota) {
+		super(prezzo,nota);
 		this.nome = nome;
 		this.calorie = calorie;
 	}

@@ -20,8 +20,8 @@ public class Gadget extends Prodotto {
 	}
 
 
-	public Gadget(String nome, double prezzo) {
-		super(prezzo);
+	public Gadget(String nome, double prezzo,String nota) {
+		super(prezzo,nota);
 		this.nome = nome;
 	}
 	
