@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.lorenzoDeCarolis.esercizio1Giorno14.entities.Building;
 import it.lorenzoDeCarolis.esercizio1Giorno14.entities.Role;
 import it.lorenzoDeCarolis.esercizio1Giorno14.entities.User;
 
@@ -41,4 +42,5 @@ public class UserService {
 	public User save(User u) {
 		return userRepo.save(u);
 	}
+	
 }

@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
+import it.lorenzoDeCarolis.esercizio1Giorno14.entities.Building;
 import it.lorenzoDeCarolis.esercizio1Giorno14.entities.Role;
 import it.lorenzoDeCarolis.esercizio1Giorno14.entities.RoleType;
 import it.lorenzoDeCarolis.esercizio1Giorno14.entities.User;
@@ -30,4 +31,14 @@ public class BeansConfig {
 				.build();
 	}
 	
+	
+	@Bean
+	@Scope("prototype")
+	public Building building(String n, String a,String c) {
+		return Building.builder()
+				.name(n)
+				.address(a)
+				.city(c)
+				.build();
+	}
 }

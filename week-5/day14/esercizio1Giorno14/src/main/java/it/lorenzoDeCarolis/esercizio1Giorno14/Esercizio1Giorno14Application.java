@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import it.lorenzoDeCarolis.esercizio1Giorno14.configs.BeansConfig;
 import it.lorenzoDeCarolis.esercizio1Giorno14.dao.RoleService;
@@ -32,6 +33,7 @@ public class Esercizio1Giorno14Application implements CommandLineRunner {
 	
 	@Autowired
 	private RoleService rServ;
+
 
 	@Override
 	public void run(String... args) throws Exception {

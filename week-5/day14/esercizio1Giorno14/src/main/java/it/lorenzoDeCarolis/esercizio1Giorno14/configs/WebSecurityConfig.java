@@ -39,8 +39,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.anyRequest()
 			.authenticated()
 			.and()
+			.httpBasic()
+			.and()
 			.formLogin()
-			.successForwardUrl("/users")
+			.successForwardUrl("/login_success")
 			.and()
 			.logout()
 			.and()
@@ -57,7 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-		Optional<User> authUserObj = userServ.getById(1);
+		Optional<User> authUserObj = userServ.getById(6);
 		User authUser = authUserObj.get();
 		String role = "USER";
 		Set<Role> roles = authUser.getRoles();
