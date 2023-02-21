@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>App</title>
+		<style>
+			#resp {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			#resp .person {
+				background-color: lightgrey;
+				margin: 0 0 1rem 0;
+				padding: 0.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Benvenuto</h1>
+		
+		<button id="sendAjax" type="button" role="button">Clicca per mostrare le prime 4 persone</button>
+		<div id="resp"></div>
+		
+		<script>
+			const btn = document.getElementById("sendAjax")
+			const resp = document.getElementById("resp")
+		
+			btn.addEventListener('click', () => {
+				fetch("http://localhost:8082/app/data3")
+					.then(resp => resp.json())
+					.then(people => {
+						people.forEach((person, i) => {
+							resp.innerHTML += `
+								<div class="person">
+									ID: ${person.id} Nome: ${person.nome} Username: ${person.username} Email: ${person.email}
+								</div>
+							`		
+						})
+					})	
+			})
+		</script>
+	</body>
+</html>
